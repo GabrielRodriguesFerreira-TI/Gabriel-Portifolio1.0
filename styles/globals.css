@@ -1,0 +1,241 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.span-top {
+  animation: myAnim 1s ease 0s 1 normal forwards;
+}
+
+@keyframes myAnim {
+  0% {
+    transform: scale(0);
+    transform-origin: 50% 0%;
+  }
+
+  100% {
+    transform: scale(1);
+    transform-origin: 50% 0%;
+  }
+}
+
+.updown {
+  animation-name: infiniteupdown;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+  transition: all 0.3s;
+}
+
+@keyframes infiniteupdown {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-30px);
+  }
+
+  200% {
+    transform: translateY(0px);
+  }
+}
+
+.hero-gradient {
+  background: -webkit-linear-gradient(
+    180deg,
+    #5bd1b9 0%,
+    #5bb9ef 50%,
+    #7a70e9 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-gradient {
+  background: -webkit-linear-gradient(
+    180deg,
+    #5bd1b9 0%,
+    #5bb9ef 50%,
+    #7a70e9 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.border-line::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 24%;
+  width: 80px;
+  height: 2px;
+  background-color: rgb(165, 165, 165);
+}
+
+.border-line-projects::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 32%;
+  width: 80px;
+  height: 2px;
+  background-color: rgb(165, 165, 165);
+}
+
+.border-line-work::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 40%;
+  width: 80px;
+  height: 2px;
+  background-color: rgb(165, 165, 165);
+}
+
+@layer components {
+  .heroButton {
+    @apply cursor-pointer px-6 py-2 border border-transparent rounded-full uppercase text-xs tracking-widest text-gray-500 transition-all hover:border-[#7F5AF0]/50 hover:text-[#fff]/80;
+  }
+
+  .contactInput {
+    @apply outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-[#242424] text-gray-500 placeholder-gray-500 transition-all focus:border-[#7F5AF0]/40 focus:text-[#7F5AF0]/40;
+  }
+}
+
+.div-link:hover {
+  color: #7f5af0;
+  font-weight: 600;
+}
+
+.div-link svg {
+  z-index: 100;
+}
+
+.div-link svg:hover {
+  opacity: 0;
+}
+
+.div-link:hover::after {
+  opacity: 1;
+}
+
+.div-link::after {
+  content: "";
+  font-size: 12px;
+  letter-spacing: 2px;
+  position: absolute;
+  bottom: 15px;
+  left: 2px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+
+.Github:first-child::after {
+  content: "GITHUB";
+  color: #7f5af0;
+  font-weight: 600;
+}
+
+.Instagram::after {
+  content: "INSTA";
+  color: #7f5af0;
+  font-weight: 600;
+}
+
+.Linkedin::after {
+  content: "LINKEDIN";
+  left: -3px;
+  color: #7f5af0;
+  font-weight: 600;
+}
+
+.Facebook::after {
+  content: "FACEBOOK";
+  left: -5px;
+  color: #7f5af0;
+  font-weight: 600;
+}
+
+.contact::after {
+  content: "CONTATO";
+  color: #7f5af0;
+  font-weight: 600;
+  left: -3px;
+}
+
+#bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.after-project::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 70px;
+  height: 70px;
+  border: 2px solid green;
+}
+
+.animetedLine {
+  stroke-dasharray: 25;
+  stroke-dashoffset: 1000;
+  animation: lineAnim 5s linear forwards;
+  position: relative;
+}
+
+.divSvg {
+  width: 100%;
+  z-index: 1;
+}
+
+.afterDivSvg {
+  position: absolute;
+  top: 10;
+  right: -20px;
+  width: 100%;
+  height: 500px;
+  background-color: #000000;
+  z-index: 10;
+}
+
+@keyframes lineAnim {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.tech {
+  margin-top: 10px;
+}
+
+.summary {
+  margin-top: -40px;
+}
+
+.tooltip .popup::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #26262c;
+  bottom: -10px;
+  left: 108px;
+  transform: rotate(45deg);
+}
+
+.tooltip:hover .popup {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0%) translateY(0px);
+}
